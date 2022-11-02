@@ -1,0 +1,24 @@
+<div
+  (click)="check()"
+  class="rounded flex justify-between w-full p-2 todo duration-500 hover:bg-slate-200"
+  [ngClass]="{ 'translate-x-[100%] opacity-0': onDelete }"
+>
+  <div class="flex">
+    <input [checked]="todo.checked" type="checkbox" class="w-5 h-5 my-auto" />
+    <p
+      class="text-xl ml-4 my-auto"
+      [ngClass]="{ 'line-through opacity-60': todo.checked }"
+    >
+      {{ todo.body }}
+    </p>
+  </div>
+
+  <button
+    appClickStopPropagation
+    (click)="deleteTodo()"
+    class="bg-rose-700 border rounded px-2 text-white"
+  >
+    Delete
+  </button>
+</div>
+<hr class="w-full" />

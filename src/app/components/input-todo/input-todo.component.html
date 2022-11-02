@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="flex mb-4">
+  <input
+    id="todoInput"
+    class="px-2 text-xl w-full border h-10 rounded border-cyan-900"
+    type="text"
+    placeholder="Add todo..."
+    formControlName="body"
+  />
+  <button
+    type="submit"
+    class="bg-cyan-800 text-xl rounded px-3 ml-3 text-white"
+  >
+    Add
+  </button>
+</form>

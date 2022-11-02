@@ -1,0 +1,17 @@
+<app-error-message></app-error-message>
+<div class="max-w-2xl container mx-auto pt-5">
+  <h1 class="cursor-default text-center mb-4 text-3xl">
+    {{ title | titlecase }}
+  </h1>
+  <app-input-todo> </app-input-todo>
+
+  <ng-container *ngIf="todoService.todoList.length !== 0; else elseTemplate">
+    <app-todo
+      *ngFor="let todo of todoService.todoList"
+      [todo]="todo"
+    ></app-todo>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <h1 class="text-center text-2xl opacity-70">No todos... Just start typing</h1>
+  </ng-template>
+</div>

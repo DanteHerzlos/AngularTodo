@@ -1,0 +1,7 @@
+<div
+  (click)="errorService.clear()"
+  [ngClass]="errorService.error  === '' ? 'translate-y-[-100px]' : 'translate-y-0'"
+  class="cursor-default duration-500 w-full p-2 text-center text-2xl bg-red-600 opacity-70 text-white"
+>
+  {{ errorService.error }}
+</div>
